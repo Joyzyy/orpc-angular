@@ -1,0 +1,40 @@
+<h1>orpc-angular playground</h1>
+
+<section>
+  <h2>orpcInfiniteResource</h2>
+  <ul data-testid="planets">
+    @for (planet of list.items(); track planet.id) {
+    <li>{{ planet.name }}</li>
+    }
+  </ul>
+  @if (list.hasMore()) {
+  <button data-testid="load-more" (click)="list.loadMore()">Load more</button>
+  }
+</section>
+
+<section>
+  <h2>orpcResource</h2>
+  <button data-testid="find-2" (click)="selectedId.set(2)">Planet 2</button>
+  <button data-testid="find-missing" (click)="selectedId.set(999)">Planet 999</button>
+  <p data-testid="planet">
+    @if (planet.hasValue()) { {{ planet.value().name }} } @else if (notFound(); as message) { {{
+    message }} } @else { loading }
+  </p>
+</section>
+
+<section>
+  <h2>orpcResource without id (link TransferState)</h2>
+  <p data-testid="first">{{ first.hasValue() ? first.value().name : 'loading' }}</p>
+</section>
+
+<section>
+  <h2>orpcMutation</h2>
+  <input data-testid="name" [value]="name()" (input)="name.set($any($event.target).value)" />
+  <button data-testid="create" [disabled]="create.isPending()" (click)="save()">Create</button>
+  <p data-testid="create-status">{{ create.status() }}</p>
+</section>
+
+<section>
+  <h2>orpcStreamResource</h2>
+  <p data-testid="ticks">{{ ticks.value() }}</p>
+</section>

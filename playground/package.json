@@ -1,0 +1,40 @@
+{
+  "name": "playground",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "serve": "node dist/playground/server/server.mjs",
+    "lib": "pnpm --dir .. build && pnpm --dir .. pack --pack-destination playground && pnpm install --force",
+    "e2e": "node e2e.mjs"
+  },
+  "dependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/forms": "^22.2.0",
+    "@angular/platform-browser": "^22.2.0",
+    "@angular/platform-server": "^22.2.0",
+    "@angular/router": "^22.2.0",
+    "@angular/ssr": "^22.2.2",
+    "@orpc/client": "2.0.0-beta.40",
+    "@orpc/server": "2.0.0-beta.40",
+    "express": "^5.1.0",
+    "orpc-angular": "file:./orpc-angular-0.1.0.tgz",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zod": "^4.1.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.2.2",
+    "@angular/cli": "^22.2.2",
+    "@angular/compiler-cli": "^22.2.0",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.12.0",
+    "playwright": "1.60.0",
+    "typescript": "~6.0.2"
+  },
+  "packageManager": "pnpm@12.9.1"
+}

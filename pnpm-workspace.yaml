@@ -1,0 +1,6 @@
+minimumReleaseAge: 1440
+minimumReleaseAgeStrict: true
+blockExoticSubdeps: true
+
+minimumReleaseAgeExclude:
+  - '@angular/*'

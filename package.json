@@ -1,0 +1,79 @@
+{
+  "name": "orpc-angular",
+  "version": "0.1.0",
+  "description": "Angular integration for oRPC: typesafe signal resources, mutations, streams and SSR TransferState",
+  "keywords": [
+    "angular",
+    "mutation",
+    "orpc",
+    "resource",
+    "signals",
+    "ssr",
+    "streaming",
+    "transfer-state",
+    "typesafe",
+    "typescript"
+  ],
+  "homepage": "https://github.com/Joyzyy/orpc-angular#readme",
+  "bugs": {
+    "url": "https://github.com/Joyzyy/orpc-angular/issues"
+  },
+  "license": "MIT",
+  "author": "joylunow",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joyzyy/orpc-angular.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./src/index.ts"
+  },
+  "publishConfig": {
+    "exports": {
+      "./package.json": "./package.json",
+      ".": {
+        "types": "./dist/index.d.mts",
+        "import": "./dist/index.mjs",
+        "default": "./dist/index.mjs"
+      }
+    },
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "prepack": "tsdown",
+    "test": "vitest run",
+    "type:check": "tsc --noEmit",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check",
+    "release": "bumpp"
+  },
+  "devDependencies": {
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/platform-browser": "^22.2.0",
+    "@orpc/client": "2.0.0-beta.40",
+    "@standard-server/core": "~0.9.2",
+    "bumpp": "^10.2.3",
+    "jsdom": "^27.4.0",
+    "oxfmt": "^0.53.0",
+    "tsdown": "^0.22.14",
+    "typescript": "^6.0.3",
+    "vitest": "5.0.3"
+  },
+  "peerDependencies": {
+    "@angular/common": ">=22.0.0",
+    "@angular/core": ">=22.0.0",
+    "@orpc/client": ">=2.0.0-beta.40"
+  },
+  "engines": {
+    "node": ">=22.12"
+  },
+  "packageManager": "pnpm@12.9.1"
+}
